@@ -1,0 +1,28 @@
+.select-class {
+    height: 4rem !important;
+    margin: 4px;
+}
+
+.hide-button-cart {
+    background-color: var(--primary-color) !important;
+    color: var(--white) !important;
+}
+
+.show-button-cart {
+    background-color: var(--white) !important;
+    border: 1px solid var(--light-border) !important;
+}
+
+.date-pickers {
+    display: flex;
+    text-align: center;
+    margin: 0px 25rem;
+}
+
+.cal-button {
+    padding-top: 8px;
+}
+
+mat-label {
+    margin-left: 10px;
+}

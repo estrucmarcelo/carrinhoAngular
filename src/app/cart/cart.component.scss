@@ -1,0 +1,33 @@
+.buttons-class {
+    display: flex;
+}
+
+.button-cart {
+    background-color: var(--primary-color) !important;
+    color: var(--white) !important;
+    margin: 5px;
+    width: 50%;
+}
+
+.red-color {
+    float: right;
+    color: var(--dark-red);
+    cursor: pointer;
+}
+
+.select-class {
+    height: 4rem !important;
+    width: 4em;
+}
+
+.card-header-text {
+    display: block !important;
+}
+
+.qty-label {
+    margin: 5px;
+}
+
+.no-cart-text {
+    text-align: center;
+}

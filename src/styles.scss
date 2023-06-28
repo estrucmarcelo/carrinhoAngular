@@ -1,0 +1,101 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,
+body {
+    height: 100%;
+}
+
+
+
+body {
+    margin: 0;
+    font-family: PopinRegular, "Helvetica Neue", sans-serif !important;
+}
+
+*::-webkit-scrollbar {
+    width: 0px !important;
+    background-color: white !important;
+}
+
+*::-webkit-scrollbar-thumb {
+    width: 0px !important;
+    background-color: whitesmoke !important;
+    border-radius: 0px !important;
+}
+
+*::-webkit-scrollbar:horizontal {
+    width: 0px !important;
+    background-color: white !important;
+}
+
+*::-webkit-scrollbar-thumb:horizontal {
+    width: 0px !important;
+    background-color: whitesmoke !important;
+    border-radius: 0px;
+}
+
+:root {
+    --black: #000;
+    --dark-gray: #5C5C5C;
+    --gray: gray;
+    --green: #288C4A;
+    --dark-red: #ee0d0d;
+    --red: #EE745D;
+    --yellow: #FFF99D;
+    --white: #EFF0F6;
+    --heder-text: #BDBDBD;
+    --lightgray-text: #828282;
+    --category-inputbg: #777777;
+    --primary-color: #5bb1a4;
+    --secondary-color: #81cbaf;
+    --button-primary: #3f51b5 --light-border:#c4c4c4
+}
+
+.selected-icon {
+    color: var(--secondary-color) !important;
+}
+
+.label-text {
+    text-transform: capitalize;
+}
+
+.mat-grid-tile-content {
+    height: 50% !important;
+}
+
+.example-card {
+    margin: 10px;
+    width: auto;
+}
+
+.selected-button-class {
+    background-color: var(--primary-color) !important;
+    color: var(--white) !important;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.un-selected-button {
+    background-color: var(--white) !important;
+    border: 1px solid var(--light-border) !important;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.red-color-astrik {
+    color: var(--dark-red);
+}
+
+.color-bgcolor {
+    background-color: var(--primary-color) !important;
+    color: var(--white) !important;
+}
+
+.home-button-text {
+    color: var(--primary-color) !important;
+}
+
+.center-align-texts {
+    text-align: center;
+}

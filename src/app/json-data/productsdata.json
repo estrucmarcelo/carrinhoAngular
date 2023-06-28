@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "productName": "mixer grinder",
+        "categoryId": 1,
+        "cost": 2000,
+        "discount": 4,
+        "specialDayDiscount": 3,
+        "addedToCart": false,
+        "quantity": 1
+    },
+    {
+        "id": 2,
+        "productName": "microwave",
+        "categoryId": 1,
+        "cost": 5000,
+        "discount": 12,
+        "specialDayDiscount": 2,
+        "addedToCart": false,
+        "quantity": 1
+    },
+    {
+        "id": 3,
+        "productName": "keyboard",
+        "categoryId": 2,
+        "cost": 500,
+        "discount": 0,
+        "specialDayDiscount": 5,
+        "addedToCart": false,
+        "quantity": 1
+    },
+    {
+        "id": 4,
+        "productName": "sd card",
+        "categoryId": 3,
+        "cost": 1200,
+        "discount": 6,
+        "specialDayDiscount": 8,
+        "addedToCart": false,
+        "quantity": 1
+    },
+    {
+        "id": 5,
+        "productName": "recliner",
+        "categoryId": 4,
+        "cost": 40000,
+        "discount": 20,
+        "specialDayDiscount": 25,
+        "addedToCart": false,
+        "quantity": 1
+    },
+    {
+        "id": 6,
+        "productName": "dinning table",
+        "categoryId": 4,
+        "cost": 36000,
+        "discount": 15,
+        "specialDayDiscount": 10,
+        "addedToCart": false,
+        "quantity": 1
+    }
+]

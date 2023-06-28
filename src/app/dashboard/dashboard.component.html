@@ -1,0 +1,52 @@
+<!-- tool bar -->
+<app-navbar path="dashboard"></app-navbar>
+
+<!-- date picker section -->
+<mat-card class="example-card ">
+    <mat-card-content>
+        <div class="date-pickers">
+            <mat-form-field class="select-class">
+                <mat-select name="selectedMonth" [(ngModel)]=selected.month disableRipple>
+                    <mat-option *ngFor="let val of monthOptions" [value]=val>
+                        {{val}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="select-class">
+                <mat-select name="selectedYear" [(ngModel)]=selected.year disableRipple>
+                    <mat-option *ngFor="let val of yearOptions" [value]=val>
+                        {{val}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div class="cal-button">
+                <button mat-button type="button" class="hide-button-cart" (click)="getSelectedDate('')"> Get</button>
+            </div>
+        </div>
+        <!-- status of puchased items of selected month -->
+        <div class="center-align-texts">
+            <p>Purchased items of this month are {{purchasedItems.length}}</p>
+        </div>
+
+        <!-- to show & hide details of purchased items -->
+        <div class="center-align-texts">
+            <button mat-button type="button" [ngClass]="purchasedItems.length==0?'show-button-cart':'hide-button-cart'"
+                [disabled]="purchasedItems.length==0" (click)="getDetails()"> {{showDetails?'Hide
+                Details':'Show Details'}}</button>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<!-- puchased items list -->
+<mat-grid-list cols="2" rowHeight="2:1" *ngIf="showDetails">
+    <mat-label>Your purchased items of this month</mat-label>
+    <mat-card class="example-card" *ngFor="let item of purchasedItems">
+        <mat-card-header>
+            <mat-card-title class="label-text">{{item.productName}}</mat-card-title>
+            <mat-card-subtitle>Purchased on {{item.puchasedTimeStamp | date:'dd/MM/yyyy hh:mm a'}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p class="label-text">{{item?.categoryName}}</p>
+        </mat-card-content>
+    </mat-card>
+</mat-grid-list>

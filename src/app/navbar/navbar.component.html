@@ -1,0 +1,16 @@
+<!-- tool bar -->
+<mat-toolbar class="toolbar-nav">
+    <mat-toolbar-row>
+        <span class="cursor-class" (click)="handleNavClick('')">Shopping Cart</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button type="button" (click)="handleNavClick('')">
+            <mat-icon [ngClass]="path==''?'selected-icon':'unselected-icon'">home</mat-icon>
+        </button>
+        <button mat-icon-button type="button" (click)="handleNavClick('cart')">
+            <mat-icon [ngClass]="path=='cart'?'selected-icon':'unselected-icon'">shopping_cart</mat-icon>
+        </button>
+        <button mat-icon-button type="button" (click)="handleNavClick('dashboard')">
+            <mat-icon [ngClass]="path=='dashboard'?'selected-icon':'unselected-icon'">dashboard</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>

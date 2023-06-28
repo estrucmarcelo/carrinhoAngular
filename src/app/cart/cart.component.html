@@ -1,0 +1,66 @@
+<!-- tool bar -->
+<app-navbar path="cart"></app-navbar>
+
+<!-- cart items list if exist -->
+<div *ngIf="cartItems.length>0">
+    <!-- price card -->
+    <mat-card class="example-card">
+        <mat-card-content>
+            <p>Total Item Price <span>₹</span> {{totalItemsPrice}}</p>
+            <p *ngIf="specialDay"><span class="red-color-astrik">*</span>You have a special day discount on each
+                product<span class="red-color-astrik">*</span></p>
+            <p> <span class="red-color-astrik">*</span>You will get {{additionalBenfits.additionalDiscount}}% discount
+                with on purchasing of price <span>₹</span> {{additionalBenfits.totalItemsPrice}} <span
+                    class="red-color-astrik">*</span>
+            </p>
+        </mat-card-content>
+    </mat-card>
+    <!-- card with cart items  -->
+    <div>
+        <mat-grid-list cols="2" rowHeight="2:1">
+            <mat-card class="example-card " *ngFor="let item of cartItems">
+                <mat-card-header class="card-header-text">
+                    <mat-card-title class="label-text">{{item.productName}} <mat-icon class="red-color"
+                            (click)="handleQuantitySelect('',item,'delete')">delete</mat-icon>
+                    </mat-card-title>
+                    <mat-card-subtitle><span>₹</span>{{item.cost}} per item with
+                        <span>{{item.discount}}% discount</span></mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p class="label-text">{{item?.categoryName}}</p>
+                    <p>You will get this product with a discount of {{item.discount}}% </p>
+                    <p *ngIf="specialDay">You have a special day discount of {{item.specialDayDiscount}} %</p>
+                    <div>
+                        <mat-label class="qty-label">Quantity</mat-label>
+                        <mat-form-field class="select-class">
+                            <mat-select name="quantity"
+                                (selectionChange)="handleQuantitySelect($event.value,item,'add')"
+                                [(ngModel)]=item.quantity disableRipple>
+                                <mat-option *ngFor="let val of options" [value]=val>
+                                    {{val}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-list>
+    </div>
+
+    <!-- footer buttons -->
+    <div class="buttons-class">
+        <button mat-button type="button" class="button-cart" (click)="handleButtonClick('add')">Add more
+            products</button>
+        <button mat-button type="button" class="button-cart" [disabled]="totalItemsPrice==0"
+            (click)="handleButtonClick('buy')">Buy
+            Items </button>
+    </div>
+</div>
+
+<!-- cart items list  if not exist -->
+<mat-card class="example-card no-cart-text" *ngIf="cartItems.length==0">
+    <mat-card-content>
+        <p>You have no cart items </p>
+        <i class='far fa-frown'></i>
+    </mat-card-content>
+</mat-card>

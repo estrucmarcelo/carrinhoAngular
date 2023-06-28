@@ -1,0 +1,22 @@
+<!-- tool bar -->
+<app-navbar path=""></app-navbar>
+<mat-label *ngIf="specialDay" class="secialday-text">Special Day Offer available</mat-label>
+<!-- product items list -->
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-card class="example-card" *ngFor="let item of items">
+        <mat-card-header class="card-header-titles">
+            <mat-card-title class="label-text">{{item.productName}}</mat-card-title>
+            <button mat-button type="btton" class="color-bgcolor" (click)="goToCart()">Go to cart
+            </button>
+            <mat-card-subtitle> <span>₹</span>{{item.cost}} with <span>{{item.discount}}%
+                    discount</span></mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p class="label-text">{{item?.categoryName}}</p>
+            <p>You will get this product with a discount of {{item.discount}}%
+            </p>
+        </mat-card-content>
+        <button mat-button type="button" (click)="handleAddToCart(item)" class='home-button-text'>
+            {{item.addedToCart ?'Added to cart':'Add to cart'}}</button>
+    </mat-card>
+</mat-grid-list>
